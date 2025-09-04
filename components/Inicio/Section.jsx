@@ -1,4 +1,6 @@
 import styles from "@/app/styles/inicio.module.css";
+
+
 export default function Section({ SinImagen = false, titulo, descripcion }) {
   
   const estilo = SinImagen ? `${styles.SinImagen}` : styles.seccion;
