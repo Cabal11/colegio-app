@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items:center; 
+  width: 100%;
+  height: 60px;
+  padding: 10px 5%;
+  background-color: blue;
+}
+
+.link {
+  margin-left: auto;
+}
+
+.logo {
+  width: auto;
+  height: 30px;
+  margin: auto 0 auto 0;
+}
+
+.imagenFace {
+  width: auto;
+  height: 40px;
+  margin: auto 0 auto 0;
+  transition: all 0.3s;
+}
+
+.imagenFace:hover{
+  transform: scale(1.1);
+  background-color: #ff6f61;
+  box-shadow: 0 0 15px rgba(255,127,80,0.6);
+  border-radius: 5px;
+
+}

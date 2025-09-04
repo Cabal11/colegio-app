@@ -1,0 +1,69 @@
+/*Barra de navegacion estilo*/
+header {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background: blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  height: 60px;
+}
+
+header .img-nav {
+  width: auto;
+  height: 40px;
+  margin-right: auto;
+}
+
+header a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+header .nav-items li {
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 15px;
+  transition: ease-in-out 0.3s;
+}
+
+header .nav-items li a {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  width: 100%;
+  height: 100%;
+}
+
+@media (width < 790px) {
+  header .nav-items li a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (width < 370px) {
+  header .img-nav {
+    height: 20px;
+  }
+  header .nav-items li a {
+    font-size: 0.7rem;
+  }
+}
+
+header .nav-items li:hover {
+  transform: scale(1.1);
+  background-color: #ff6f61;
+  border-radius: 5px;
+  /*Iluminado*/
+  /*box-shadow: 0 0 10px rgba(255,127,80,0.6);*/
+  /*Estilo de juego*/
+  box-shadow: 2px 2px 2px 2px black;
+  /*background: rgb(43, 156, 243);*/
+}
+
+header .nav-items li a:hover {
+  color: white;
+}
