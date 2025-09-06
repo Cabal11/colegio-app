@@ -7,8 +7,11 @@
 main {
   flex: 1;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center; /*cambiar a space evenly para mas comodidad responsive */
   align-items: center;
+  flex-direction: column;
+  margin: auto 0px;
   padding: 2rem;
 }
 
@@ -21,25 +24,33 @@ main {
   gap: 40px;
 }
 
+.titulo {
+  margin: 35px 0px;
+  color: #60a5fa;
+  font-size: clamp(1.3rem, 5vw, 3rem);
+  background: linear-gradient(to bottom, #00eaff, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .tarjeta {
   background-color: #374151;
   width: 100%;
   padding: 2rem;
   box-shadow: 0 0 10px blueviolet;
   border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 200px;
+
 }
 
 .texto {
+  width: 100%;
+  padding: 20px;
   text-align: center;
   margin: 0;
 }
 
 .texto h1 {
-  color: #60A5FA;
+  color: #60a5fa;
   font-size: clamp(1.2rem, 4vw, 2rem);
   background: linear-gradient(to bottom, #00eaff, #0099ff);
   -webkit-background-clip: text;
@@ -49,7 +60,7 @@ main {
 
 .texto p {
   font-size: clamp(0.9rem, 3vw, 1.4rem);
-  color: #F5F5F5;
+  color: #f5f5f5;
 }
 
 /*Moviles*/
@@ -62,4 +73,3 @@ main {
     min-height: 150px;
   }
 }
-

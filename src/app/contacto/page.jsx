@@ -4,6 +4,7 @@ import "../styles/Contacto.css";
 export default function Contacto() {
   return (
     <main>
+      <h1 className="titulo">Contáctenos</h1>
       <div className="container">
         <section className="tarjeta">
           <div className="texto">
