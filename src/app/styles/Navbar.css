@@ -38,21 +38,6 @@ header .nav-items li a {
   height: 100%;
 }
 
-@media (width < 790px) {
-  header .nav-items li a {
-    font-size: 0.8rem;
-  }
-}
-
-@media (width < 370px) {
-  header .img-nav {
-    height: 20px;
-  }
-  header .nav-items li a {
-    font-size: 0.7rem;
-  }
-}
-
 header .nav-items li:hover {
   transform: scale(1.1);
   background-color: #ff6f61;
@@ -66,4 +51,58 @@ header .nav-items li:hover {
 
 header .nav-items li a:hover {
   color: white;
+}
+
+.nav-bar {
+  display: flex;
+}
+
+.menu-cambiar {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .nav-bar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: blue;
+    opacity: 0.9;
+    width: 100%;
+    padding: 1rem 5%;
+    z-index: 1000;
+  }
+
+  .nav-bar.abierto {
+    display: flex;
+  }
+
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-items li {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .menu-cambiar {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: black;
+    cursor: pointer;
+    z-index: 1100;
+  }
+}
+
+@media (min-width: 751px) {
+  .menu-cambiar {
+    display: none;
+  }
 }
