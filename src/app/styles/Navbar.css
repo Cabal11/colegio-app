@@ -1,12 +1,16 @@
 /*Barra de navegacion estilo*/
 header {
+  position: fixed;
+  top: 0;
   font-family: Verdana, Arial, Helvetica, sans-serif;
   background: blue;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 10px 5%;
   height: 60px;
+  z-index: 1000;
 }
 
 header .img-nav {

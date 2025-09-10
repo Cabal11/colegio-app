@@ -10,6 +10,7 @@
 
 /* header */
 .titulo {
+  margin-top: 60px;
   /* Por si un navegador no soporta el degradado */
   color: #60a5fa;
   font-size: clamp(1.3rem, 5vw, 3rem);
