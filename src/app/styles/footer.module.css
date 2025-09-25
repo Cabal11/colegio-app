@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
-  align-items:center; 
+  align-items: center;
   width: 100%;
   height: 60px;
   padding: 10px 5%;
@@ -25,10 +25,10 @@
   transition: all 0.3s;
 }
 
-.imagenFace:hover{
-  transform: scale(1.1);
+.imagenFace:hover {
+  transform: scale(1.05);
   background-color: #ff6f61;
-  box-shadow: 0 0 15px rgba(255,127,80,0.6);
+  box-shadow: 0 0 15px 5px rgba(255, 127, 80, 0.6);
   border-radius: 5px;
-
+  cursor: pointer;
 }

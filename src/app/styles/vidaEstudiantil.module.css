@@ -29,9 +29,20 @@
 /* Para imagen en la izquierda */
 .imagen {
   max-width: 95vw;
+  aspect-ratio: 16/9;
+  object-fit: cover;
   border: 3px solid white;
   border-radius: 10px;
 }
+
+/* Para imagen en la derecha */
+  .imagenInvertida {
+    max-width: 95vw;
+    aspect-ratio: 16/9;
+   object-fit: cover;
+    border: 3px solid white;
+    border-radius: 10px;
+  }
 
 .cajaTexto {
   text-align: center;
@@ -39,12 +50,6 @@
   margin-bottom: 20px;
 }
 
-/* Para imagen en la derecha */
-  .imagenInvertida {
-    max-width: 95vw;
-    border: 3px solid white;
-    border-radius: 10px;
-  }
 
   .cajaTextoInvertida {
     text-align: center;

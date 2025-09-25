@@ -15,33 +15,33 @@ export default function VidaEstudiantil() {
       se usa "false" o no hace el llamado de invertido para que la imagen este a la izquierda */}
 
       <Section
-        url={"/foto1.png"}
+        urlImagen={"/foto1.png"}
         titulo={"Banda"}
         descripcion={"Una banda con muchas formas de tocar"}
       />
 
       <Section
         invertido={true}
-        url={"/foto1.png"}
+        urlImagen={"/foto1.png"}
         titulo={"Deportes"}
         descripcion={"Los mejores campeonatos en un solo lugar"}
       />
 
       <Section
-        url={"/foto1.png"}
+        urlImagen={"/foto1.png"}
         titulo={"Actos"}
         descripcion={"Todo lo bonito de las actividades festivas"}
       />
 
       <Section
         invertido={true}
-        url={"/foto1.png"}
+        urlImagen={"/foto1.png"}
         titulo={"Zonas verdes"}
         descripcion={"Lugares para que descansen se pongan a jugar al monopoly"}
       />
 
       <Section
-        url={"/foto1.png"}
+        urlImagen={"/foto1.png"}
         titulo={"Biblioteca"}
         descripcion={
           "Los libros mas actualizados sobre ciencia, agricultura y muchas cosas mas"

@@ -1,22 +1,28 @@
+"use client";
 import styles from "@/app/styles/inicio.module.css";
+import { motion } from "framer-motion";
 
-
-export default function Section({ SinImagen = false, titulo, descripcion }) {
-  
+export default function Section({
+  SinImagen = false,
+  titulo,
+  descripcion,
+  imagenFondo,
+}) {
   const estilo = SinImagen ? `${styles.SinImagen}` : styles.seccion;
-  
-    return (
+
+  return (
     <section className={estilo}>
-      <div className={styles.texto_secciones}>
-        <h2 className={styles.titulo}>
-            {titulo}
-            </h2>
-        <p className={styles.descripcion}>
-          {descripcion}
-        </p>
-      </div>
+      <img className={styles.fondo} src={imagenFondo} alt="Fondo 1"></img>
+      <motion.div
+        className={styles.texto_secciones}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
+      >
+        <h2 className={styles.titulo}>{titulo}</h2>
+        <p className={styles.descripcion}>{descripcion}</p>
+      </motion.div>
     </section>
   );
-
-  
 }

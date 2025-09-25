@@ -37,9 +37,30 @@ main {
   background-color: #374151;
   width: 100%;
   padding: 2rem;
-  box-shadow: 0 0 10px blueviolet;
+  box-shadow: 0px 0px 15px 5px blueviolet;
   border-radius: 20px;
+  min-height: 200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+/* Animacion */
+opacity: 0;
+animation: fadeSlideUp 0.8s ease-out forwards;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.tarjeta:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.tarjeta:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.tarjeta:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.tarjeta:nth-child(4) {
+  animation-delay: 0.7s;
 }
 
 .texto {
@@ -61,15 +82,40 @@ main {
 .texto p {
   font-size: clamp(0.9rem, 3vw, 1.4rem);
   color: #f5f5f5;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.texto a{
+  color: #93c5fd;
+  word-break: break-word;
+
 }
 
 /*Moviles*/
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 767px) {
   .container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr;
   }
   .tarjeta {
     padding: 1.5rem;
     min-height: 150px;
   }
+}
+
+/*Animaciones en las tarjetas*/
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tarjeta:hover{
+  transform: translateY(-20px);/*Eleva la tarjeta*/
+  box-shadow: 0 20px 20px rgba(138, 43, 226, 0.5); /*Efecto de profundidad*/
 }

@@ -4,14 +4,12 @@ import styles from "@/app/styles/footer.module.css";
 function Footer() {
   return (
     <footer className={styles.container}>
+      <img className={styles.logo} src="/foto1.png"></img>
 
-      <img className={styles.logo}
-       src="/foto1.png"></img>
-
-      {/**Abrir una nueva pagina y tener seguridad con rel*/}
+      {/* *Abrir una nueva pagina y tener seguridad con rel */}
       <a
-        className={styles.link}
         href="https://www.facebook.com/liceobocas"
+        className={styles.link}
         target="_blank"
         rel="noopener noreferrer"
       >

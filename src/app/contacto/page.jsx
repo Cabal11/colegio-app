@@ -9,31 +9,32 @@ export default function Contacto() {
         <section className="tarjeta">
           <div className="texto">
             <h1>Facebook</h1>
-            <p>Informacion</p>
-            {/*Poner etique a para redirigir a facebook*/}
+            <p>Visítanos en nuestra página oficial <a href="https://www.facebook.com/liceobocas">Colegio Bocas de Nosara </a></p>
+            {/*Enlace a la pagina de facebook*/}
           </div>
         </section>
 
         <section className="tarjeta">
           <div className="texto">
             <h1>Correo</h1>
-            <p>Informacion</p>
-            {/*Buscar como redirigir a gmail para mandar el correo*/}
+            <p>Envíanos un mensaje al correo <a href="mailto:lic.debocasdenosara@mep.go.cr">lic.debocasdenosara@mep.go.cr</a></p>
+            {/*Enlace para enviar correo*/}
           </div>
         </section>
 
         <section className="tarjeta">
           <div className="texto">
             <h1>Teléfono</h1>
-            <p>Informacion</p>
-            {/**acordarse del telefono fijo bueno */}
+            <p>Llámanos para más información al número <a href="tel:+50626820522">+506 2682-0522</a></p>
+            {/*Envia al usuario a su app telefono para realizar llamada*/}
           </div>
         </section>
 
         <section className="tarjeta">
           <div className="texto">
             <h1>Dirección</h1>
-            <p>Informacion</p>
+            <p>Estamos ubicados diagonal al salón de Santa Teresita</p>
+            {/* Informacion sobre la direccion de la institucion */}
           </div>
         </section>
       </div>
