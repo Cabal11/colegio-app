@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <header>
       <Link href="/">
-      <img className="img-nav" alt="Icono" src="/foto1.png" />
+      <img className="img-nav" alt="Icono colegio" src="/Logo_Colegio.webp" />
       </Link>
       
       <button

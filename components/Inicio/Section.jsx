@@ -12,7 +12,7 @@ export default function Section({
 
   return (
     <section className={estilo}>
-      <img className={styles.fondo} src={imagenFondo} alt="Fondo 1"></img>
+      <img className={styles.fondo} src={imagenFondo} alt="Fondo colegio"></img>
       <motion.div
         className={styles.texto_secciones}
         initial={{ opacity: 0, y: 30 }}

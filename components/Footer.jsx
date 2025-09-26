@@ -4,7 +4,8 @@ import styles from "@/app/styles/footer.module.css";
 function Footer() {
   return (
     <footer className={styles.container}>
-      <img className={styles.logo} src="/foto1.png"></img>
+      {/* Icono del colegio */}
+      <img className={styles.logo} src="/Logo_Colegio.webp"></img>
 
       {/* *Abrir una nueva pagina y tener seguridad con rel */}
       <a
@@ -13,7 +14,8 @@ function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img className={styles.imagenFace} src="/facebook_icono.svg"></img>
+        {/* Icono de Facebook */}
+        <img className={styles.imagenFace} src="/facebook_icono.svg" alt="Icono colegio"></img>
       </a>
     </footer>
   );
