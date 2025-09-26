@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@/app/styles/vidaEstudiantil.module.css";
 
-function Section({ invertido = false, urlImagen, titulo, descripcion }) {
+export default function Section({ invertido = false, urlImagen, titulo, descripcion }) {
 
   const imagen = invertido ? styles.imagenInvertida : styles.imagen;
   const texto = invertido ? styles.cajaTextoInvertida: styles.cajaTexto;
@@ -29,4 +29,4 @@ function Section({ invertido = false, urlImagen, titulo, descripcion }) {
   );
 }
 
-export default Section;
+
