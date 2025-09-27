@@ -5,14 +5,14 @@ export default async function Section() {
   let secciones = [];
   try {
     //Consulta a la API
-    const res = await fetch("http://localhost:3030/api/seccion");
+    const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion");
 
     //Si no devuelve un 200
     if (!res.ok) {
       throw new Error(`Problemas al conectar: ${res.status}`);
     }
     //Obtiene los datos
-    secciones = await data.json();
+    secciones = await res.json();
   } catch (error) {
     console.error("Problemas al obtener las secciones:", error);
     // Puedes asignar datos de respaldo o dejar el arreglo vacío
