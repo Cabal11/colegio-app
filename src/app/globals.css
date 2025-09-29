@@ -10,7 +10,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  
+}
+
+#__next, .layout{
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+.container{
+  flex: 1;
 }
 
 img{

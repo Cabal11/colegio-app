@@ -13,6 +13,7 @@ main {
   flex-direction: column;
   margin: auto 0px;
   padding: 2rem;
+  margin-bottom: 60px;
 }
 
 .container {
@@ -26,6 +27,7 @@ main {
 
 .titulo {
   margin: 35px 0px;
+  padding-top: 30px;
   color: #60a5fa;
   font-size: clamp(1.3rem, 5vw, 3rem);
   background: linear-gradient(to bottom, #00eaff, #0099ff);

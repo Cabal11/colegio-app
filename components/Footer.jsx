@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className={styles.container}>
       {/* Icono del colegio */}
-      <img className={styles.logo} src="/Logo_Colegio.webp"></img>
+      <img className={styles.logo} src="/Logo_Colegio.webp" alt="Icono colegio"></img>
 
       {/* *Abrir una nueva pagina y tener seguridad con rel */}
       <a
@@ -15,7 +15,7 @@ function Footer() {
         rel="noopener noreferrer"
       >
         {/* Icono de Facebook */}
-        <img className={styles.imagenFace} src="/facebook_icono.svg" alt="Icono colegio"></img>
+        <img className={styles.imagenFace} src="/facebook_icono.svg" alt="Icono facebook"></img>
       </a>
     </footer>
   );
