@@ -6,7 +6,7 @@ export default function Inicio() {
   return (
     <div className={styles.contenido}>
       <h1 className={styles.titulo}>Colegio Bocas de Nosara</h1>
-      <h2 className={styles.subtitulo}>Fechas importantes</h2>
+      <h2 className={styles.tituloFecha}>Fechas importantes</h2>
       <p className={styles.descripcion}>Descripcion</p>
 
       <Section
@@ -14,13 +14,13 @@ export default function Inicio() {
         descripcion={
           "Requisitos sobre la matrícula y detalles sobre el proceso"
         }
-        imagenFondo={"https://res.cloudinary.com/dh26fm2su/image/upload/v1758927883/Captura_de_pantalla_53_dmafcn.png"}
+        imagenFondo={"https://raw.githubusercontent.com/Cabal11/Imagenes/main/assets/Colegio_name.webp"}
       />
 
       <Section
         titulo={"Vida estudiantil"}
         descripcion={"Conoce el entorno que rodea a nuestros estudiantes"}
-        imagenFondo={"https://res.cloudinary.com/dh26fm2su/image/upload/v1758927883/Captura_de_pantalla_53_dmafcn.png"}
+        imagenFondo={"https://raw.githubusercontent.com/Cabal11/Imagenes/main/assets/Institucion.webp"}
       />
 
       <Section

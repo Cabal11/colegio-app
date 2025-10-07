@@ -4,7 +4,7 @@ export default function Matricula() {
   return (
     <main className={styles.container}>
       <h1 className={styles.titulo}>Requisitos de matrícula</h1>
-      <ul className={styles.texto}>
+      <ul className={styles.textoRequisitos}>
         <li>Matricula 1</li>
         <li>Matricula 2</li>
         <li>Matricula 3</li>

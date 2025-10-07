@@ -5,7 +5,11 @@ export default async function Section() {
   let secciones = [];
   try {
     //Consulta a la API
-    const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion");
+    console.log("Llamando a la API")
+    // const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion");
+    const res = await fetch("http://localhost:3000/api/seccion", {next: {revalidate: 8700}});
+    // const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion", {cache: 'no-store'});
+    // const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion", {next: {revalidate: 10}});
 
     //Si no devuelve un 200
     if (!res.ok) {

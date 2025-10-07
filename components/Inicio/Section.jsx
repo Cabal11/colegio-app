@@ -20,7 +20,7 @@ export default function Section({
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
       >
-        <h2 className={styles.titulo}>{titulo}</h2>
+        <h2 className={styles.tituloSeccion}>{titulo}</h2>
         <p className={styles.descripcion}>{descripcion}</p>
       </motion.div>
     </section>

@@ -9,29 +9,43 @@
 }
 
 /* header */
-.titulo {
+.titulo{
   margin-top: 60px;
-  /* Por si un navegador no soporta el degradado */
-  color: #60a5fa;
   font-size: clamp(1.3rem, 5vw, 3rem);
-  background: linear-gradient(to bottom, #00eaff, #0099ff);
+  /* Por si un navegador no soporta el degradado */
+  color: #f1f1f1;
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+background: linear-gradient(to bottom, #0d3b66, #f4d35e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tituloSeccion{
+  margin-top: 60px;
+  font-size: clamp(1.3rem, 5vw, 3rem);
+  /* Por si un navegador no soporta el degradado */
+  color: #f1f1f1;
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+background: linear-gradient(to bottom, #0d3b66, #f4d35e);
+   /* background: linear-gradient(to bottom, #00eaff, #0099ff); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* subtitulo */
-.subtitulo {
-  color: #60a5fa;
+.tituloFecha {
   margin-top: 20px;
   font-size: clamp(1rem, 4vw, 2.5rem);
-  background: linear-gradient(to bottom, #00eaff, #0099ff);
+  color: #60a5fa;
+  text-shadow: 2px 2px 6px rgba(173, 216, 230, 0.5); /* azul claro */
+  background: linear-gradient(to bottom, #0d3b66, #f4d35e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .descripcion {
     font-size: clamp(0.9rem, 3vw, 1.8rem);
-    color: whitesmoke;
+    color: #1C1C1C;
   margin: 30px 0px;
 }
 
@@ -47,6 +61,11 @@
   margin-bottom: 5%;
 }
 
+/* Blanco a las que tienen imagen */
+.seccion p{
+  color: whitesmoke;
+}
+
 .fondo {
   position: absolute;
   top: 0;
@@ -55,7 +74,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  filter: brightness(0.5); /* oscurece la imagen para que el texto resalte */
+  filter: brightness(0.4); /* oscurece la imagen para que el texto resalte */
   /* Animacion */
   transform: scale(1);
   transition: transform 5s ease;
@@ -80,11 +99,12 @@
   position: relative;
   z-index: 1;
   text-align: center;
-  color: whitesmoke;
+  color: #1C1C1C;
   /* Animacion */
   animation: fadeInUp 1s ease-out forwards;
   opacity: 0;
 }
+
 
 
 @media (max-width: 500px) {

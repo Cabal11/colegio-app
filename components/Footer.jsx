@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className={styles.container}>
       {/* Icono del colegio */}
-      <img className={styles.logo} src="/Logo_Colegio.webp" alt="Icono colegio"></img>
+      <img className={styles.logo} src="/Nuevo_logo.webp" alt="Icono colegio"></img>
 
       {/* *Abrir una nueva pagina y tener seguridad con rel */}
       <a

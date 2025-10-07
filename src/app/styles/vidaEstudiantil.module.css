@@ -19,7 +19,8 @@
 
   /* Por si un navegador no soporta el degradado */
   color: #60a5fa;
-  background: linear-gradient(to bottom, #00eaff, #0099ff);
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+background: linear-gradient(to bottom, #0d3b66, #f4d35e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -39,9 +40,9 @@
   max-width: 95vw;
   aspect-ratio: 16/9;
   object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0px 0px 10px 3px whitesmoke;
-  border-radius: 10px;
+  border: 3px solid #d4c4a8;
+  box-shadow: 0px 0px 10px 5px rgba(176, 169, 159);
+  border-radius: 8px;
 }
 
 /* Para imagen en la derecha */
@@ -49,9 +50,9 @@
   max-width: 95vw;
   aspect-ratio: 16/9;
   object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0px 0px 10px 3px whitesmoke;
-  border-radius: 10px;
+  border: 3px solid #d4c4a8;
+  box-shadow: 0px 0px 10px 5px rgba(176, 169, 159);
+  border-radius: 8px;
 }
 
 .cajaTexto {
@@ -71,13 +72,18 @@
   /* Por si un navegador no soporta el degradado */
   color: #60a5fa;
   font-size: clamp(1.3rem, 5vw, 3rem);
-  background: linear-gradient(to bottom, #00eaff, #0099ff);
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+background: linear-gradient(to bottom, #0d3b66, #f4d35e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Descripcion de las secciones */
 .descripcion {
-  color: whitesmoke;
+  color: #1C1C1C;
   font-size: clamp(0.9rem, 3vw, 1.4rem);
+  word-break: break-word;
+  overflow-wrap: break-word;
   margin-top: 10px;
 }
 
@@ -86,8 +92,8 @@
   .imagen {
     max-width: 40vw;
     float: left;
-    border: 3px solid white;
-    border-radius: 10px;
+    border: 3px solid #d4c4a8;
+    border-radius: 8px;
     margin-right: 15px;
     margin-left: 5%;
   }
@@ -102,8 +108,8 @@
   .imagenInvertida {
     max-width: 40vw;
     float: right;
-    border: 3px solid white;
-    border-radius: 10px;
+    border: 3px solid #d4c4a8;
+    border-radius: 8px;
     margin-left: 15px;
     margin-right: 5%;
   }
@@ -126,6 +132,7 @@
 .error {
   flex: 1;
   display: flex;
+  font-size: clamp(1rem, 2vw, 4vw);
   align-items: center;
   justify-content: center;
   color: #f87171;
