@@ -11,10 +11,9 @@
 
 .titulo {
   margin-top: 60px;
-  color: #60a5fa;
   font-size: clamp(1.3rem, 5vw, 3rem);
-  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
-background: linear-gradient(to bottom, #0d3b66, #f4d35e);
+  color: #4b3621;
+  background: linear-gradient(to bottom, #4b3621, #a68b6c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

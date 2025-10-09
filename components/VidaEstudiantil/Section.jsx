@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/app/styles/vidaEstudiantil.module.css";
+import styles from "@/app/styles/Modulos/vidaEstudiantil.module.css";
 
 export default async function Section() {
   let secciones = [];
@@ -7,7 +7,7 @@ export default async function Section() {
     //Consulta a la API
     console.log("Llamando a la API")
     // const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion");
-    const res = await fetch("http://localhost:3000/api/seccion", {next: {revalidate: 8700}});
+    const res = await fetch("http://localhost:3000/api/seccion", {next: {revalidate: 60}});
     // const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion", {cache: 'no-store'});
     // const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion", {next: {revalidate: 10}});
 

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/app/styles/inicio.module.css";
+import styles from "@/app/styles/Modulos/inicio.module.css";
 import Section from "../../components/Inicio/Section";
 
 export default function Inicio() {
@@ -7,26 +7,35 @@ export default function Inicio() {
     <div className={styles.contenido}>
       <h1 className={styles.titulo}>Colegio Bocas de Nosara</h1>
       <h2 className={styles.tituloFecha}>Fechas importantes</h2>
-      <p className={styles.descripcion}>Descripcion</p>
+      <p className={styles.descripcionFecha}>Descripcion</p>
 
+      {/* Cada seccion envia un parametro al componente Section para realizar el renderizado y validar si no tiene imagen mediante un booleano */}
       <Section
         titulo={"Matrícula"}
         descripcion={
-          "Requisitos sobre la matrícula y detalles sobre el proceso"
+          "Matricula en el colegio Bocas de Nosara y disfruta de una experiencia inolvidable, se encuentran las materias básicas, así como talleres exploratorios, educación musical, informática educativa y mucho más."
         }
-        imagenFondo={"https://raw.githubusercontent.com/Cabal11/Imagenes/main/assets/Colegio_name.webp"}
+        imagenFondo={
+          "https://raw.githubusercontent.com/Cabal11/Imagenes/main/assets/Colegio_name.webp"
+        }
       />
 
       <Section
         titulo={"Vida estudiantil"}
-        descripcion={"Conoce el entorno que rodea a nuestros estudiantes"}
-        imagenFondo={"https://raw.githubusercontent.com/Cabal11/Imagenes/main/assets/Institucion.webp"}
+        descripcion={
+          "La famosa frase “Jale a dar una vuelta” para ir conociendo las distintas aulas y comprando golosinas en la soda situada dentro de la institución. Además de disfrutar de múltiples actividades y salidas a otros colegios representando la institución en competencias."
+        }
+        imagenFondo={
+          "https://raw.githubusercontent.com/Cabal11/Imagenes/main/assets/Institucion.webp"
+        }
       />
 
       <Section
-      SinImagen={true}
+        SinImagen={true}
         titulo={"Calidad académica"}
-        descripcion={"Enseñando compromiso y buenos valores a los estudiantes"}
+        descripcion={
+          "Servicio educativo cuyo propósito es desarrollar al máximo las potencialidades, independencia y formación para el desempeño de una actividad productiva/laboral o bien, la continuidad del proceso educativo, ofertas formativas o educativas. Además, estimula el desarrollo de conocimientos, habilidades y destrezas de vida personal, esencial en la construcción del proyecto de vida."
+        }
       />
     </div>
   );

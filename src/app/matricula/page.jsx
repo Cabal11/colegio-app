@@ -1,4 +1,4 @@
-import styles from "../styles/matricula.module.css";
+import styles from "../styles/Modulos/matricula.module.css";
 
 export default function Matricula() {
   return (

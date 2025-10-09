@@ -6,7 +6,8 @@
 
 html,
 body {
-  background-color: #FFFFBF;
+  /* Crema menos intenso #FAF3E0  Crema mas intenso #FFFFBF*/
+  background-color: #FAF3E0;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;

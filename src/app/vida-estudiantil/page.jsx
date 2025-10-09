@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "../../../components/VidaEstudiantil/Section";
-import styles from "@/app/styles/vidaEstudiantil.module.css";
+import styles from "@/app/styles/Modulos/vidaEstudiantil.module.css";
 
 export default function VidaEstudiantil() {
   return (

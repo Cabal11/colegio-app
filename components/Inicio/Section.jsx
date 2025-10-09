@@ -1,14 +1,19 @@
 "use client";
-import styles from "@/app/styles/inicio.module.css";
+import styles from "@/app/styles/Modulos/inicio.module.css";
 import { motion } from "framer-motion";
 
+//Recibe la informacion enviado en los parametros para renderizar en la web
 export default function Section({
   SinImagen = false,
   titulo,
   descripcion,
   imagenFondo,
 }) {
-  const estilo = SinImagen ? `${styles.SinImagen}` : styles.seccion;
+  //Cambiar los estilos segun si tienen o no imagen de fondo
+  const estilo = SinImagen ? styles.SinImagen : styles.seccion;
+  const estiloTitulo = SinImagen
+    ? styles.tituloSinImagen
+    : styles.tituloSeccion;
 
   return (
     <section className={estilo}>
@@ -20,7 +25,7 @@ export default function Section({
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
       >
-        <h2 className={styles.tituloSeccion}>{titulo}</h2>
+        <h2 className={estiloTitulo}>{titulo}</h2>
         <p className={styles.descripcion}>{descripcion}</p>
       </motion.div>
     </section>

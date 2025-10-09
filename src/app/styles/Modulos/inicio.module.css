@@ -1,0 +1,151 @@
+.contenido {
+  flex: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Titulo del colegio y de fechas */
+.titulo {
+  margin-top: 60px;
+  font-size: clamp(1.3rem, 5vw, 3rem);
+  /* Por si un navegador no soporta el degradado */
+  color: #4b3621;
+  background: linear-gradient(to bottom, #4b3621, #a68b6c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tituloFecha {
+  margin-top: 20px;
+  font-size: clamp(1rem, 4vw, 2.5rem);
+  color: #4b3621;
+  background: linear-gradient(to bottom, #4b3621, #a68b6c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Descripcion de fechas */
+.descripcionFecha {
+  font-size: clamp(0.9rem, 3vw, 1.5rem);
+  color: #1c1c1c;
+  margin: 30px 0px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Secciones */
+.seccion {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.SinImagen {
+  width: 100vw;
+  height: 400px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+
+/* Titulo sin imagen */
+.tituloSinImagen {
+  margin-top: 60px;
+  font-size: clamp(1.3rem, 5vw, 3rem);
+  /* Por si un navegador no soporta el degradado */
+  color: #4b3621;
+  background: linear-gradient(to bottom, #4b3621, #a68b6c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Titulos con imagen */
+.tituloSeccion {
+  margin-top: 60px;
+  font-size: clamp(1.3rem, 5vw, 3rem);
+  /* Por si un navegador no soporta el degradado */
+  color: #f1f1f1;
+  text-shadow: 2px 2px 6px rgba(138, 148, 217, 0.5);
+  background: linear-gradient(to bottom, #0d3b66, #f4d35e);
+  /* background: linear-gradient(to bottom, #00eaff, #0099ff); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Negro a las que no tienen imagen */
+.descripcion {
+  font-size: clamp(0.9rem, 3vw, 1.5rem);
+  width: 70vw;
+  color: #1c1c1c;
+  margin: 30px 0px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Blanco a las que tienen imagen */
+.seccion p {
+  color: whitesmoke;
+}
+
+/* Texto general */
+.texto_secciones {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #1c1c1c;
+  /* Animacion */
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Fondo con imagen */
+.fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.4); /* oscurece la imagen para que el texto resalte */
+  /* Animacion */
+  transform: scale(1);
+  transition: transform 5s ease;
+}
+
+/* Animacion de seccion */
+.seccion:hover .fondo {
+  transform: scale(1.05); /*Hace zoom un poco al pasar encima el mouse*/
+}
+
+@media (max-width: 500px) {
+  .fondo {
+    object-fit: contain;
+  }
+  .seccion {
+    margin-bottom: 2%;
+  }
+}
+
+/*Animaciones*/
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
