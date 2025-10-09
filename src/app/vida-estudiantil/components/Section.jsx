@@ -6,9 +6,7 @@ export default async function Section() {
   try {
     //Consulta a la API
     console.log("Llamando a la API")
-    // const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion");
-    const res = await fetch("http://localhost:3000/api/seccion", {next: {revalidate: 60}});
-    // const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion", {cache: 'no-store'});
+    const res = await fetch("http://localhost:3000/api/seccion", {next: {revalidate: 7200}});
     // const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion", {next: {revalidate: 10}});
 
     //Si no devuelve un 200
@@ -17,9 +15,10 @@ export default async function Section() {
     }
     //Obtiene los datos
     secciones = await res.json();
+
   } catch (error) {
-    console.error("Problemas al obtener las secciones:", error);
-    // Puedes asignar datos de respaldo o dejar el arreglo vacío
+    console.error("Problemas al obtener la informacion en el servidor:", error);
+    // Se puede asignar datos de respaldo o dejar el arreglo vacío
     secciones = null;
   }
 

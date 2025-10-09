@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "@/app/styles/Modulos/inicio.module.css";
-import Section from "../../components/Inicio/Section";
+import Section from "./components/Section";
 
 export default function Inicio() {
   return (

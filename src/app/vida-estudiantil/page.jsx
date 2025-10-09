@@ -1,5 +1,5 @@
 import React from "react";
-import Section from "../../../components/VidaEstudiantil/Section";
+import Section from "./components/Section";
 import styles from "@/app/styles/Modulos/vidaEstudiantil.module.css";
 
 export default function VidaEstudiantil() {
