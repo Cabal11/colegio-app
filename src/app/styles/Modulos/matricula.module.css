@@ -14,6 +14,14 @@
   width: 60vw;
 }
 
+.containerPeriodo{
+  width: 60vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 20px;
+}
+
 .titulo {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -114,6 +122,10 @@
 @media (max-width: 1024px) {
   .containerRequisitos {
     width: 90vw;
+  }
+
+  .containerPeriodo{
+    grid-template-columns: 1fr;
   }
 
   .cardInfoAdd {

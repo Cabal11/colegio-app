@@ -34,13 +34,26 @@ export default async function cronograma() {
             Matrícula de {crono.tipo_proceso}
           </h3>
           <p className={styles.textoFechas}>
-            <b>Fecha:</b> Del {crono.fecha_inicio} al {crono.fecha_fin}
+            <b>Fecha:</b> Del {formatoFecha(crono.fecha_inicio)} al {formatoFecha(crono.fecha_fin)}
           </p>
           <p className={styles.textoHorario}>
-            <b>Horario de atención:</b> De {crono.hora_inicio} a {crono.hora_fin}
+            <b>Horario de atención:</b> De {crono.hora_inicio} a{" "}
+            {crono.hora_fin}
           </p>
         </section>
       ))}
     </div>
   );
+}
+
+function formatoFecha(fechas) {
+  let fecha = new Date(fechas);
+  const opciones = {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  };
+  const formato = new Intl.DateTimeFormat("es-ES", opciones);
+  return formato.format(fecha);
 }
