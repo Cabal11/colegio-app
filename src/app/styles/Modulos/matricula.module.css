@@ -1,5 +1,6 @@
 .container {
   flex: 1;
+  width: 100%;
   padding-top: 2rem;
   padding-bottom: 2rem;
   display: flex;
@@ -9,8 +10,13 @@
   min-height: 100vh;
 }
 
+.containerRequisitos {
+  width: 60vw;
+}
+
 .titulo {
-  margin-top: 60px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   font-size: clamp(1.3rem, 5vw, 3rem);
   color: #4b3621;
   background: linear-gradient(to bottom, #4b3621, #a68b6c);
@@ -18,29 +24,107 @@
   -webkit-text-fill-color: transparent;
 }
 
+.cardTipos {
+  padding: 10px 30px;
+  margin-bottom: 15px;
+  background-color: #ede3d2;
+  border-radius: 15px;
+}
+
+.cardTipos ul {
+  list-style: inside;
+}
+
+.cardTipos ul li {
+  margin-top: 5px;
+  padding-bottom: 10px;
+}
+
+.cardInfoAdd {
+  width: 60vw;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  background-color: #ede3d2;
+  border-radius: 15px;
+}
+
+.cardFechas {
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  background-color: #ede3d2;
+  border-radius: 15px;
+}
+
+.parrafoInfoAdd {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  line-height: 1.5;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Color: #4b3621 text-shadow: #a68b6c  */
+.subtitulo {
+  font-size: clamp(1.1rem, 4vw, 1.7rem);
+  color: #4b3621;
+  text-shadow:
+  1px 1px 2px #af9576,
+  0 0 1em #a68b6c,
+  0 0 0.3em #a68b6c;
+}
+
 .textoRequisitos {
-  color: #1C1C1C;
-  font-size: clamp(1rem, 4vw, 2rem);
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-}
-
-.container h2 {
-  font-size: clamp(1.1rem, 4vw, 2.5rem);
-}
-
-.container h3 {
-  font-size: clamp(1.1rem, 4vw, 2.5rem);
-}
-
-.parrafo {
-  color: #1C1C1C;
-  font-size: clamp(1rem, 3vw, 2rem);
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-}
-
-.texto li {
+  color: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  padding-top: 0.8rem;
   padding-bottom: 1rem;
 }
 
+.textoFechas {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  line-height: 1.5;
+  padding-top: 0.8rem;
+  padding-bottom: 1rem;
+}
+.textoHorario {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  line-height: 1.5;
+  /* padding-top: 0.3rem; */
+  padding-bottom: 1rem;
+}
+
+/*Estilo del mensaje de error*/
+.error {
+  flex: 1;
+  display: flex;
+  font-size: clamp(1rem, 2vw, 4vw);
+  align-items: center;
+  justify-content: center;
+  color: #f87171;
+  background-color: #1f2937;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  min-height: 100vh;
+}
+
+@media (max-width: 1024px) {
+  .containerRequisitos {
+    width: 90vw;
+  }
+
+  .cardInfoAdd {
+    width: 90vw;
+  }
+
+  .cardFechas {
+    width: 80vw;
+  }
+
+  .textoRequisitos{
+    line-height: 1.5;
+  }
+}

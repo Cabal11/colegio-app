@@ -29,39 +29,26 @@ export default async function requisitos() {
     );
   }
 
-//Evitar duplicados
-  const tipoMostrado = new Set();
-
-  //Recorrer el json
-  const datos = requisitos.map((requisitos, index) => {
-
-    //Validar si existe o no en SET, verdadero si existe, falso si no existe
-    const tipos = !tipoMostrado.has(requisitos.tipo);
-
-    //Si no se agrego antes, se agrega a la lista
-    if (tipos) {
-      tipoMostrado.add(requisitos.tipo);
+// Agrupar requisitos por tipo
+  const requisitosPorTipo = requisitos.reduce((acc, item) => {
+    if (!acc[item.tipo]) {
+      acc[item.tipo] = [];
     }
+    acc[item.tipo].push(item.requisito);
+    return acc;
+  }, {});
 
-//Recorre el array, si existe en el set, devuelve un false, por lo que no se agrega en el if y tampoco se renderiza
-//Si no existe en el set, devuelve un true, por lo que se agrega luego en el if para que no se repita, y como es su primera aparicion
-//Se renderiza el titulo, ya que tipos es verdadaero y el condicional && lo permite
+  // Renderizar secciones por tipo
+  const secciones = Object.entries(requisitosPorTipo).map(([tipo, reqs], index) => (
+    <section className={styles.cardTipos} key={index}>
+      <h2 className={styles.subtitulo}>Requisitos {tipo}</h2>
+      <ul className={styles.textoRequisitos}>
+        {reqs.map((req, i) => (
+          <li key={i}>{req}</li>
+        ))}
+      </ul>
+    </section>
+  ));
 
-    return (
-      <div key={index} className={styles.containerRequisitos}>
-        <section>
-          {tipos && (<h2 className={styles.tituloMatricula}>
-            Requisitos para {requisitos.tipo}
-          </h2>)}
-          <ul className={styles.textoRequisitos}>
-            <li>{requisitos.requisito}</li>
-          </ul>
-        </section>
-      </div>
-    );
-
-  });
-
-  return <>{datos}</>;
-
+  return <section className={styles.containerRequisitos}>{secciones}</section>;
 }

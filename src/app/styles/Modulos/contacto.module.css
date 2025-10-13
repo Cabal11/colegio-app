@@ -90,6 +90,7 @@
 /* Enlaces en las tarjetas */
 .texto a {
   color: #2937bb;
+  text-decoration: none;
   word-break: break-word;
 }
 

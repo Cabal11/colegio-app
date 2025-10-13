@@ -17,6 +17,7 @@ function Navbar() {
       </Link>
 
       <button
+        title="menu-responsive"
         className="menu-cambiar"
         onClick={() => setMenuAbierto(!menuAbierto)}
       >
@@ -35,7 +36,7 @@ function Navbar() {
           </li>
           <li className="nav-Matricula">
             <Link href="/matricula">
-              <span onClick={cerrarMenu}>Matricula</span>
+              <span onClick={cerrarMenu}>Matrícula</span>
             </Link>
           </li>
           <li className="nav-Vida">

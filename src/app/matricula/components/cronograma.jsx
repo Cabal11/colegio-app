@@ -1,12 +1,46 @@
 import React from "react";
-import styles from '@/app/styles/Modulos/matricula.module.css'
+import styles from "@/app/styles/Modulos/matricula.module.css";
 
-export default function cronograma() {
+export default async function cronograma() {
+  let cronograma = [];
+
+  try {
+    const res = await fetch("http://localhost:3000/api/cronograma");
+
+    if (!res.ok) {
+      throw new Error(`Problemas al conectar: ${res.status}`);
+    }
+
+    cronograma = await res.json();
+  } catch (error) {
+    console.error("Problemas al obtener la informacion en el servidor:", error);
+    // Se puede asignar datos de respaldo o dejar el arreglo vacío
+    cronograma = null;
+  }
+
+  if (!cronograma || cronograma.length === 0) {
+    return (
+      <div className={styles.container}>
+        <p className={styles.error}>Sin calendario, por los momentos.</p>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.containerPeriodo}>
-      <h3 className={styles.tituloPeriodo}>Periodo de matricula de</h3>
-      <p className={styles.textoFecha}>Fecha: </p>
-      <p className={styles.textoHorario}>Horario: </p>
+      {cronograma.map((crono, index) => (
+        <section key={index} className={styles.cardFechas}>
+          <h3 className={styles.subtitulo}>
+            Matrícula de {crono.tipo_proceso}
+          </h3>
+          <p className={styles.textoFechas}>
+            <b>Fecha:</b> Del {crono.fecha_inicio} al {crono.fecha_fin}
+          </p>
+          <p className={styles.textoHorario}>
+            <b>Horario de atención:</b> De {crono.hora_inicio} a {crono.hora_fin}
+          </p>
+        </section>
+      ))}
     </div>
   );
 }
