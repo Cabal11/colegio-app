@@ -18,7 +18,7 @@ export default function Matricula() {
         <p className={styles.parrafoInfoAdd}>
           La camiseta oficial del colegio y el uniforme de Educación Física se
           podrán adquirir en la cooperativa de la institución: “Coopenosara” (en
-          el periodo de matrícula 2025).
+          el periodo de matrícula {Anio()}).
         </p>
       </div>
 
@@ -27,4 +27,15 @@ export default function Matricula() {
       <Cronograma />
     </main>
   );
+}
+
+function Anio() {
+  const anioActual = new Date().getFullYear();
+  const mesActual = new Date().getMonth();
+
+  if (mesActual === 11) {
+    return anioActual + 1;
+  }
+
+  return anioActual;
 }
