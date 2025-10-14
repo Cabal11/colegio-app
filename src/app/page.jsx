@@ -7,15 +7,16 @@ export default function Inicio() {
   return (
     <div className={styles.contenido}>
       <h1 className={styles.titulo}>Colegio Bocas de Nosara</h1>
-      <h2 className={styles.tituloFecha}>Fechas importantes</h2>
+      <div >
+      {/* <h2 className={styles.tituloFecha}>Fechas importantes</h2> */}
       <Fechas />
-      <p className={styles.descripcionFecha}>Descripcion</p>
+      </div>
 
       {/* Cada seccion envia un parametro al componente Section para realizar el renderizado y validar si no tiene imagen mediante un booleano */}
       <Section
         titulo={"Matrícula"}
         descripcion={
-          "Matricula en el colegio Bocas de Nosara y disfruta de una experiencia inolvidable, se encuentran las materias básicas, así como talleres exploratorios, educación musical, informática educativa y mucho más."
+          "Matrícula en el colegio Bocas de Nosara y disfruta de una experiencia inolvidable, se encuentran las materias básicas, así como talleres exploratorios, educación musical, informática educativa, inglés y mucho más."
         }
         imagenFondo={
           "https://raw.githubusercontent.com/Cabal11/Imagenes/main/assets/Colegio_name.webp"
@@ -25,7 +26,7 @@ export default function Inicio() {
       <Section
         titulo={"Vida estudiantil"}
         descripcion={
-          "La famosa frase “Jale a dar una vuelta” para ir conociendo las distintas aulas y comprando golosinas en la soda situada dentro de la institución. Además de disfrutar de múltiples actividades y salidas a otros colegios representando la institución en competencias."
+          "Disfruta de múltiples actividades dentro y fuera de la institución. Donde son muchos de los momentos para que queden el recuerdo. Tanto como las salidas en competencias, viajes de la banda, el FEA y otros."
         }
         imagenFondo={
           "https://raw.githubusercontent.com/Cabal11/Imagenes/main/assets/Institucion.webp"

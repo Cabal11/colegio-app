@@ -10,7 +10,7 @@
 
 /* Titulo del colegio y de fechas */
 .titulo {
-  margin-top: 60px;
+  margin-top: 5rem;
   font-size: clamp(1.3rem, 5vw, 3rem);
   /* Por si un navegador no soporta el degradado */
   color: #4b3621;
@@ -20,7 +20,9 @@
 }
 
 .tituloFecha {
-  margin-top: 20px;
+  margin-top: 12%;
+  margin-bottom: 25px;
+  text-align: center;
   font-size: clamp(1rem, 4vw, 2.5rem);
   color: #4b3621;
   background: linear-gradient(to bottom, #4b3621, #a68b6c);
@@ -29,12 +31,29 @@
 }
 
 /* Descripcion de fechas */
-.descripcionFecha {
+.containerDiasEspeciales {
   font-size: clamp(0.9rem, 3vw, 1.5rem);
   color: #1c1c1c;
-  margin: 30px 0px;
+  text-align: start;
+  padding: 5px 30px;
+  margin-bottom: 8rem;
+  margin-top: 3rem;
+  background-color: #ede3d2;
+  border-radius: 15px;
+}
+
+.containerDiasEspeciales ul {
+  list-style: inside;
+}
+
+.textoMes {
+  text-align: center;
+  line-height: 1.5;
+  margin: 15px 0px;
   word-break: break-word;
   overflow-wrap: break-word;
+  color: #4b3621;
+  text-shadow: 1px 1px 2px #af9576, 0 0 1em #a68b6c, 0 0 0.3em #a68b6c;
 }
 
 /* Secciones */
@@ -46,13 +65,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 .SinImagen {
   width: 100vw;
   height: 400px;
-  margin-bottom: 40px;
+  margin-bottom: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +95,9 @@
   font-size: clamp(1.3rem, 5vw, 3rem);
   /* Por si un navegador no soporta el degradado */
   color: #f1f1f1;
-  text-shadow: 2px 2px 6px rgba(138, 148, 217, 0.5);
+  text-shadow:
+  0 1px 4px rgba(255, 255, 255, 0.3),
+  0 2px 6px rgba(255, 255, 255, 0.2);
   background: linear-gradient(to bottom, #0d3b66, #f4d35e);
   /* background: linear-gradient(to bottom, #00eaff, #0099ff); */
   -webkit-background-clip: text;
@@ -129,12 +150,19 @@
   transform: scale(1.05); /*Hace zoom un poco al pasar encima el mouse*/
 }
 
+@media (max-width: 767px) {
+  .containerDiasEspeciales {
+    width: 95vw;
+    margin-bottom: 6rem;
+  }
+}
+
 @media (max-width: 500px) {
   .fondo {
-    object-fit: contain;
+    /* object-fit: contain; */
   }
   .seccion {
-    margin-bottom: 2%;
+    margin-bottom: 20%;
   }
 }
 

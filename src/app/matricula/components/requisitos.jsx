@@ -6,7 +6,8 @@ export default async function requisitos() {
   let req = null;
 
   try {
-    const res = await fetch("http://localhost:3000/api/requisitos");
+    // const res = await fetch("http://localhost:3000/api/requisitos");
+    const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/requisitos", {next: {revalidate: 480}});
 
     if (!res.ok) {
       throw new Error(`Problemas al conectar: ${res.status}`);

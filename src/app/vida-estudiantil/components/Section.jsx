@@ -6,8 +6,8 @@ export default async function Section() {
   try {
     //Consulta a la API
     console.log("Llamando a la API")
-    const res = await fetch("http://localhost:3000/api/seccion", {next: {revalidate: 7200}});
-    // const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion", {next: {revalidate: 10}});
+    // const res = await fetch("http://localhost:3000/api/seccion", {next: {revalidate: 7200}});
+    const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion", {next: {revalidate: 480}});
 
     //Si no devuelve un 200
     if (!res.ok) {

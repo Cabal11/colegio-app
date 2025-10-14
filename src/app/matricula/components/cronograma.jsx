@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "@/app/styles/Modulos/matricula.module.css";
+import next from "next";
 
 export default async function cronograma() {
   let cronograma = [];
 
   try {
-    const res = await fetch("http://localhost:3000/api/cronograma");
+    // const res = await fetch("http://localhost:3000/api/cronograma");
+    const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/cronograma", {next: {revalidate: 480}});
 
     if (!res.ok) {
       throw new Error(`Problemas al conectar: ${res.status}`);

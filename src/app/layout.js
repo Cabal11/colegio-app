@@ -11,6 +11,9 @@ export const metadata = {
   icons: {
     icon: "/Nuevo_logo.webp",
   },
+  openGraph: {
+    image: ["/Nuevo_logo.webp"],
+  },
 };
 
 export default function RootLayout({ children }) {
