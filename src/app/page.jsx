@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@/app/styles/Modulos/inicio.module.css";
 import Section from "./components/Section";
-import Fechas from "./components/fechas";
+import Fechas from "./components/Fechas";
 
 export default function Inicio() {
   return (
