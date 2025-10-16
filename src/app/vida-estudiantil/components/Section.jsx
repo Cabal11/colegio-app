@@ -1,28 +1,52 @@
-import React from "react";
+"use client";
+import { useState, useEffect } from "react";
 import styles from "@/app/styles/Modulos/vidaEstudiantil.module.css";
+import { resolve } from "styled-jsx/css";
 
-export default async function Section() {
-  let secciones = [];
-  try {
-    //Consulta a la API
-    console.log("Llamando a la API")
-    // const res = await fetch("http://localhost:3000/api/seccion", {next: {revalidate: 7200}});
-    const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion", {next: {revalidate: 480}});
+export default function Section() {
+  const [secciones, setSecciones] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    //Si no devuelve un 200
-    if (!res.ok) {
-      throw new Error(`Problemas al conectar: ${res.status}`);
-    }
-    //Obtiene los datos
-    secciones = await res.json();
+  useEffect(() => {
+    const fetchData = async () => {
+      let intento = 0;
+      const maxIntentos = 3;
 
-  } catch (error) {
-    console.error("Problemas al obtener la informacion en el servidor:", error);
-    // Se puede asignar datos de respaldo o dejar el arreglo vacío
-    secciones = null;
+      while (intento < maxIntentos) {
+        try {
+          console.log(`Llamando al api, intento ${intento + 1}`);
+          const res = await fetch(
+            "https://backend-nodejs-production-79b3.up.railway.app/api/seccion"
+          );
+
+          const data = res.json();
+
+          if (data && res.ok) {
+            setSecciones(data);
+            break;
+          } else {
+            throw new Error("Datos vacios o problemas en la respuesta");
+          }
+        } catch (error) {
+          console.error(`Problemas al traer los datos: ${error.message}`);
+          intento++;
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+        }
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className={styles.container}>
+        <p className={styles.error}>Cargando...</p>
+      </div>
+    );
   }
 
-  if (!secciones || secciones.length === 0) {
+  if (!secciones) {
     return (
       <div className={styles.container}>
         <p className={styles.error}>

@@ -1,23 +1,47 @@
-import React from "react";
+import {useState, useEffect} from "react";
 import styles from "@/app/styles/Modulos/matricula.module.css";
-import next from "next";
 
-export default async function cronograma() {
-  let cronograma = [];
+export default function cronograma() {
+  const [cronograma, setCronograma] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  try {
-    // const res = await fetch("http://localhost:3000/api/cronograma");
-    const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/cronograma", {next: {revalidate: 480}});
+  useEffect(() => {
+    const fetchData = async () => {
+      let intento = 0;
+      const maxIntentos = 3;
 
-    if (!res.ok) {
-      throw new Error(`Problemas al conectar: ${res.status}`);
-    }
+      while (intento < maxIntentos) {
+        try {
+          console.log(`Llamando al api, intento ${intento + 1}`);
+          const res = await fetch(
+            "https://backend-nodejs-production-79b3.up.railway.app/api/cronograma"
+          );
 
-    cronograma = await res.json();
-  } catch (error) {
-    console.error("Problemas al obtener la informacion en el servidor:", error);
-    // Se puede asignar datos de respaldo o dejar el arreglo vacío
-    cronograma = null;
+          const data = res.json();
+
+          if (data && res.ok) {
+            setCronograma(data);
+            break;
+          } else {
+            throw new Error("Datos vacios o problemas en la respuesta");
+          }
+        } catch (error) {
+          console.error(`Problemas al traer los datos: ${error.message}`);
+          intento++;
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+        }
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className={styles.container}>
+        <p className={styles.error}>Cargando...</p>
+      </div>
+    );
   }
 
   if (!cronograma || cronograma.length === 0) {
@@ -36,7 +60,8 @@ export default async function cronograma() {
             Matrícula de {crono.tipo_proceso}
           </h3>
           <p className={styles.textoFechas}>
-            <b>Fecha:</b> Del {formatoFecha(crono.fecha_inicio)} al {formatoFecha(crono.fecha_fin)}
+            <b>Fecha:</b> Del {formatoFecha(crono.fecha_inicio)} al{" "}
+            {formatoFecha(crono.fecha_fin)}
           </p>
           <p className={styles.textoHorario}>
             <b>Horario de atención:</b> De {crono.hora_inicio} a{" "}

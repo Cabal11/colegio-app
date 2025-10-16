@@ -1,23 +1,47 @@
-import React from "react";
+import {useState, useEffect} from "react";
 import styles from "@/app/styles/Modulos/matricula.module.css";
 
-export default async function requisitos() {
-  let requisitos = [];
-  let req = null;
+export default function requisitos() {
+   const [requisitos, setRequisitos] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  try {
-    // const res = await fetch("http://localhost:3000/api/requisitos");
-    const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/requisitos", {next: {revalidate: 480}});
+  useEffect(() => {
+    const fetchData = async () => {
+      let intento = 0;
+      const maxIntentos = 3;
 
-    if (!res.ok) {
-      throw new Error(`Problemas al conectar: ${res.status}`);
-    }
+      while (intento < maxIntentos) {
+        try {
+          console.log(`Llamando al api, intento ${intento + 1}`);
+          const res = await fetch(
+            "https://backend-nodejs-production-79b3.up.railway.app/api/requisitos"
+          );
 
-    requisitos = await res.json();
-  } catch (error) {
-    console.error("Problemas al obtener la informacion en el servidor:", error);
-    // Se puede asignar datos de respaldo o dejar el arreglo vacío
-    requisitos = null;
+          const data = res.json();
+
+          if (data && res.ok) {
+            setRequisitos(data);
+            break;
+          } else {
+            throw new Error("Datos vacios o problemas en la respuesta");
+          }
+        } catch (error) {
+          console.error(`Problemas al traer los datos: ${error.message}`);
+          intento++;
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+        }
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className={styles.container}>
+        <p className={styles.error}>Cargando...</p>
+      </div>
+    );
   }
 
   if (!requisitos || requisitos.length === 0) {
@@ -30,7 +54,7 @@ export default async function requisitos() {
     );
   }
 
-// Agrupar requisitos por tipo
+  // Agrupar requisitos por tipo
   const requisitosPorTipo = requisitos.reduce((acc, item) => {
     if (!acc[item.tipo]) {
       acc[item.tipo] = [];
@@ -40,16 +64,18 @@ export default async function requisitos() {
   }, {});
 
   // Renderizar secciones por tipo
-  const secciones = Object.entries(requisitosPorTipo).map(([tipo, reqs], index) => (
-    <section className={styles.cardTipos} key={index}>
-      <h2 className={styles.subtitulo}>Requisitos {tipo}</h2>
-      <ul className={styles.textoRequisitos}>
-        {reqs.map((req, i) => (
-          <li key={i}>{req}</li>
-        ))}
-      </ul>
-    </section>
-  ));
+  const secciones = Object.entries(requisitosPorTipo).map(
+    ([tipo, reqs], index) => (
+      <section className={styles.cardTipos} key={index}>
+        <h2 className={styles.subtitulo}>Requisitos {tipo}</h2>
+        <ul className={styles.textoRequisitos}>
+          {reqs.map((req, i) => (
+            <li key={i}>{req}</li>
+          ))}
+        </ul>
+      </section>
+    )
+  );
 
   return <section className={styles.containerRequisitos}>{secciones}</section>;
 }
