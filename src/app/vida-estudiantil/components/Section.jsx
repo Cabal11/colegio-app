@@ -15,7 +15,7 @@ export default function Section() {
       while (intento < maxIntentos) {
         try {
           console.log(`Llamando al api, intento ${intento + 1}`);
-          await fetch("http://localhost:3000/ping");
+          await fetch("https://backend-nodejs-production-79b3.up.railway.app/ping");
           await new Promise((r) => setTimeout(r, 3000));
           // const res = await fetch("http://localhost:3000/api/seccion");
           const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion");
