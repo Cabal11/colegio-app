@@ -1,5 +1,5 @@
-'use client'
-import {useState, useEffect} from "react";
+"use client";
+import { useState, useEffect } from "react";
 import styles from "@/app/styles/Modulos/matricula.module.css";
 
 export default function cronograma() {
@@ -14,11 +14,15 @@ export default function cronograma() {
       while (intento < maxIntentos) {
         try {
           console.log(`Llamando al api, intento ${intento + 1}`);
-          const res = await fetch(
-            "https://backend-nodejs-production-79b3.up.railway.app/api/cronograma"
-          );
 
-          const data = res.json();
+          await fetch("http://localhost:3000/ping");
+          await new Promise((r) => setTimeout(r, 3000));
+
+          // const res = await fetch("http://localhost:3000/api/cronograma");
+          const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/cronograma");
+          
+
+          const data = await res.json();
 
           if (data && res.ok) {
             setCronograma(data);
@@ -27,7 +31,7 @@ export default function cronograma() {
             throw new Error("Datos vacios o problemas en la respuesta");
           }
         } catch (error) {
-          console.error(`Problemas al traer los datos: ${error.message}`);
+          console.error(`Servidor en reposo: ${error.message}`);
           intento++;
           await new Promise((resolve) => setTimeout(resolve, 3000));
         }
@@ -40,7 +44,14 @@ export default function cronograma() {
   if (loading) {
     return (
       <div className={styles.container}>
-        <p className={styles.error}>Cargando...</p>
+        <div className={styles.error}>
+          <div className={styles.containerPuntos}>
+            <div className={styles.pulser}></div>
+            <div className={styles.pulser}></div>
+            <div className={styles.pulser}></div>
+          </div>
+          Cargando información. Por favor espere.
+        </div>
       </div>
     );
   }

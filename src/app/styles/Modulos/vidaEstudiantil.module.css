@@ -80,6 +80,7 @@
 .descripcion {
   color: #1C1C1C;
   font-size: clamp(0.9rem, 3vw, 1.4rem);
+  line-height: 1.5;
   word-break: break-word;
   overflow-wrap: break-word;
   margin-top: 10px;
@@ -131,6 +132,7 @@
   flex: 1;
   display: flex;
   font-size: clamp(1rem, 2vw, 4vw);
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #f87171;
@@ -140,6 +142,52 @@
   text-align: center;
   font-size: 1.2rem;
   min-height: 100vh;
+  width: 95vw;
+}
+
+.containerPuntos{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* animacion de carga */
+.pulser{
+  width: 15px;
+  height: 15px;
+  margin-bottom: 20px;
+  background-color: #09f;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  animation: cargar 1.2s infinite ease;
+  z-index: 10;
+}
+
+.pulser:nth-child(1){
+  transition-delay: 0s;
+}
+
+.pulser:nth-child(2){
+  transition-delay: 300ms;
+}
+
+.pulser:nth-child(3){
+  transition-delay: 600ms;
+}
+
+@keyframes cargar {
+   0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
 }
 
 /*Animacion secciones*/
