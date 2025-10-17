@@ -24,6 +24,7 @@ export default function Section() {
           if (ahora - timestamp < resetTime) {
             setSecciones(data);
             setLoading(false);
+
             return;
           } else {
             //Obtener nuevos datos
@@ -32,10 +33,10 @@ export default function Section() {
         }
 
         //Primera solicitud para encender el servidor
-        await fetch("http://localhost:3000/ping");
+        await fetch("https://backend-nodejs-production-79b3.up.railway.app/ping");
 
         //Obtener los datos
-        const res = await retryFetch("http://localhost:3000/api/seccion");
+        const res = await retryFetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion");
 
         //Si los datos son correctos los guarda y quita la pantalla de carga
         if (res) {

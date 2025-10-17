@@ -14,9 +14,9 @@ export async function retryFetch(url, intentos = 5, delay = 3000) {
       const data = await res.json();
       return data;
     } catch (error) {
-        //Mensaje de error
+      //Mensaje de error
       console.error(`Problemas en la solicitud ${error}`);
-      console.log(`Intentos: ${intentos}`)
+      console.log(`Intentos: ${intentos}`);
       if (i < intentos - 1) {
         //Espera 3 segundos, para que el servidor se active y volver a repetir
         await new Promise((r) => setTimeout(r, delay));
