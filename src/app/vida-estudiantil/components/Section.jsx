@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { retryFetch } from "../utils/retry";
 import styles from "@/app/styles/Modulos/vidaEstudiantil.module.css";
 
 export default function Section() {
@@ -7,35 +8,48 @@ export default function Section() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    //clave valor
+    const key = "secciones";
+    //7 minutos
+    const resetTime = 420000;
     //Hacer consulta
     const fetchData = async () => {
-      let intento = 0;
-      const maxIntentos = 3;
+      try {
+        const dataCache = localStorage.getItem(key);
 
-      while (intento < maxIntentos) {
-        try {
-          console.log(`Llamando al api, intento ${intento + 1}`);
-          await fetch("https://backend-nodejs-production-79b3.up.railway.app/ping");
-          await new Promise((r) => setTimeout(r, 3000));
-          // const res = await fetch("http://localhost:3000/api/seccion");
-          const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion");
-          
+        if (dataCache) {
+          const { data, timestamp } = JSON.parse(dataCache);
+          const ahora = Date.now();
 
-          const data = await res.json();
-
-          if (data && res.ok) {
+          if (ahora - timestamp < resetTime) {
             setSecciones(data);
-            break;
+            setLoading(false);
+            return;
           } else {
-            throw new Error("Datos vacios o problemas en la respuesta");
+            //Obtener nuevos datos
+            console.log("Consultando de nuevo al API cache expiro");
           }
-        } catch (error) {
-          console.error(`Servidor en reposo: ${error.message}`);
-          intento++;
-          await new Promise((resolve) => setTimeout(resolve, 3000));
         }
+
+        //Primera solicitud para encender el servidor
+        await fetch("http://localhost:3000/ping");
+
+        //Obtener los datos
+        const res = await retryFetch("http://localhost:3000/api/seccion");
+
+        //Si los datos son correctos los guarda y quita la pantalla de carga
+        if (res) {
+          const cacheData = {
+            data: res,
+            timestamp: Date.now(),
+          };
+          setSecciones(res);
+          localStorage.setItem(key, JSON.stringify(cacheData));
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Problema en la solicitud: ", error);
       }
-      setLoading(false);
     };
 
     fetchData();

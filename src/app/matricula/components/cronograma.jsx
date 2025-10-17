@@ -31,7 +31,7 @@ export default function cronograma() {
             throw new Error("Datos vacios o problemas en la respuesta");
           }
         } catch (error) {
-          console.error(`Servidor en reposo: ${error.message}`);
+          console.error("Problema en la solicitud: ", error);
           intento++;
           await new Promise((resolve) => setTimeout(resolve, 3000));
         }
