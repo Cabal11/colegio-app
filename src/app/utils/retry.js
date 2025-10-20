@@ -2,7 +2,7 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
   for (let i = 0; i < intentos; i++) {
     try {
       //Obtener token
-      const resToken = await fetch("https://backend-nodejs-production-79b3.up.railway.app/getToken", {
+      const resToken = await fetch("http://localhost:3000/getToken", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -18,6 +18,7 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
 
       //Obtener los datos
       const res = await fetch(url, {
+        method: "GET",
         credentials: "include",
       });
 
