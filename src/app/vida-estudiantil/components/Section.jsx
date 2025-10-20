@@ -38,7 +38,7 @@ export default function Section() {
 
         //Obtener los datos
         const res = await retryFetch(
-          "/api/seccion"
+          "/seccion"
         );
 
         
