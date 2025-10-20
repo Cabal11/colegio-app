@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { retryFetch } from "../../utils/retry.js";
 import styles from "@/app/styles/Modulos/vidaEstudiantil.module.css";
-import Ping from "@/app/components/Ping.jsx";
+import Ping from "@/app/components/Ping";
 
 export default function Section() {
   const [secciones, setSecciones] = useState(null);

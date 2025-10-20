@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import styles from "@/app/styles/Modulos/matricula.module.css";
 import { retryFetch } from "../../utils/retry.js";
-import Ping from "@/app/components/Ping.jsx";
+import Ping from "@/app/components/Ping";
 
 export default function requisitos() {
   const [requisitos, setRequisitos] = useState(null);
