@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "@/app/styles/Modulos/matricula.module.css";
-import { retryFetch } from "../utils/retry";
+import { retryFetch } from "../../utils/retry.js";
 
 export default function requisitos() {
   const [requisitos, setRequisitos] = useState(null);
@@ -33,9 +33,11 @@ export default function requisitos() {
 
         //Primera solicitud para encender el servidor
         await fetch("https://backend-nodejs-production-79b3.up.railway.app/ping");
+        
 
         //Obtener los datos
         const res = await retryFetch("https://backend-nodejs-production-79b3.up.railway.app/api/requisitos");
+        
 
         //Si los datos son correctos los guarda y quita la pantalla de carga
         if (res) {

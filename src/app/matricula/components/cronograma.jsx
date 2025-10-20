@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "@/app/styles/Modulos/matricula.module.css";
-import { retryFetch } from "../utils/retry";
+import { retryFetch } from "../../utils/retry.js";
 
 export default function cronograma() {
   const [cronograma, setCronograma] = useState(null);

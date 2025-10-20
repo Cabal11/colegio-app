@@ -97,8 +97,6 @@ const meses = [
 ];
 
 export default function fechas() {
-  // const [mes, setMes] = useState("");
-  // const [diasEspeciales, setdiasEspeciales] = useState([]);
 
   var mesActual = new Date().toLocaleDateString("es-ES", { month: "long" });
 
