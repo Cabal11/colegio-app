@@ -2,17 +2,12 @@ import React from "react";
 import styles from "@/app/styles/Modulos/inicio.module.css";
 import Section from "./components/Section";
 import Fechas from "./components/Fechas";
-
-async function activador() {
-  const data = await fetch("https://backend-nodejs-production-79b3.up.railway.app/ping");
-  
-}
+import Ping from "./components/Ping";
 
 export default function Inicio() {
   return (
-    
     <div className={styles.contenido}>
-      {activador()}
+      <Ping />
       <h1 className={styles.titulo}>Colegio Bocas de Nosara</h1>
       <div>
         {/* <h2 className={styles.tituloFecha}>Fechas importantes</h2> */}
