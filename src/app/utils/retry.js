@@ -2,12 +2,13 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
   for (let i = 0; i < intentos; i++) {
     try {
       //Obtener token
+      const auth = process.env.NEXT_PUBLIC_NAME_KEY;
       const resToken = await fetch("https://backend-nodejs-production-79b3.up.railway.app/getToken", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name: process.env.NEXT_PUBLIC_NAME_KEY }),
+        body: JSON.stringify({ name: auth }),
         credentials: "include",
       });
 
@@ -36,6 +37,7 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
       //Pasar los datos a json
       const data = await res.json();
       return data;
+      break;
     } catch (err) {
       //Mensaje de error
       console.error(`Problemas en la solicitud ${err}`);

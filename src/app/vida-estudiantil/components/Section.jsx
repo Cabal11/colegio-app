@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { retryFetch } from "../../utils/retry.js";
-
 import styles from "@/app/styles/Modulos/vidaEstudiantil.module.css";
 
 export default function Section() {

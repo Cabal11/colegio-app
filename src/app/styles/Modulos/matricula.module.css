@@ -143,6 +143,10 @@
   z-index: 10;
 }
 
+.pulser:first-child{
+  transition-delay: 300ms;
+}
+
 .pulser:nth-child(1){
   transition-delay: 0s;
 }
