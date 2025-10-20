@@ -34,10 +34,14 @@ export default function Section() {
         }
 
         //Primera solicitud para encender el servidor
-        <Ping/>
+        <Ping />;
 
         //Obtener los datos
-        const res = await retryFetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion");
+        const res = await retryFetch(
+          "/api/seccion"
+        );
+
+        
 
         //Si los datos son correctos los guarda y quita la pantalla de carga
         if (res) {
