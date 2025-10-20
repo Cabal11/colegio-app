@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 
 export default function Ping() {
-  return useEffect(async () => {
+  useEffect(async () => {
     try {
       const res = await fetch(
         "https://backend-nodejs-production-79b3.up.railway.app/ping"
