@@ -7,7 +7,7 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name: process.env.NAME_KEY }),
+        body: JSON.stringify({ name: process.env.NEXT_PUBLIC_NAME_KEY }),
         credentials: "include",
       });
 
