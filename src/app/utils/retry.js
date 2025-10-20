@@ -2,13 +2,13 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
   for (let i = 0; i < intentos; i++) {
     try {
       //Obtener token
-      const auth = process.env.NEXT_PUBLIC_NAME_KEY;
+      
       const resToken = await fetch("https://backend-nodejs-production-79b3.up.railway.app/getToken", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name: auth }),
+        body: JSON.stringify({ name: 'frontend1K' }),
         credentials: "include",
       });
 
