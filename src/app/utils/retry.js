@@ -2,15 +2,17 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
   for (let i = 0; i < intentos; i++) {
     try {
       //Obtener token
-      
-      const resToken = await fetch("https://backend-nodejs-production-79b3.up.railway.app/getToken", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name: 'frontend1K' }),
-        credentials: "include",
-      });
+      const resToken = await fetch(
+        "https://backend-nodejs-production-79b3.up.railway.app/getToken",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name: "frontend1K" }),
+          credentials: "include",
+        }
+      );
 
       //Validar si recibio el token
       if (!resToken) {
@@ -19,8 +21,8 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
 
       //Obtener los datos
       const res = await fetch(url, {
-        method: "GET",
         credentials: "include",
+        method: "GET",
       });
 
       //Validar si esta autorizado
@@ -37,7 +39,6 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
       //Pasar los datos a json
       const data = await res.json();
       return data;
-      break;
     } catch (err) {
       //Mensaje de error
       console.error(`Problemas en la solicitud ${err}`);

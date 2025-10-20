@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { retryFetch } from "../../utils/retry.js";
 import styles from "@/app/styles/Modulos/vidaEstudiantil.module.css";
+import Ping from "@/app/components/Ping.jsx";
 
 export default function Section() {
   const [secciones, setSecciones] = useState(null);
@@ -33,7 +34,7 @@ export default function Section() {
         }
 
         //Primera solicitud para encender el servidor
-        await fetch("https://backend-nodejs-production-79b3.up.railway.app/ping");
+        <Ping/>
 
         //Obtener los datos
         const res = await retryFetch("https://backend-nodejs-production-79b3.up.railway.app/api/seccion");

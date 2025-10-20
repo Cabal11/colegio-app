@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import styles from "@/app/styles/Modulos/matricula.module.css";
 import { retryFetch } from "../../utils/retry.js";
+import Ping from "@/app/components/Ping.jsx";
 
 export default function cronograma() {
   const [cronograma, setCronograma] = useState(null);
@@ -32,7 +33,7 @@ export default function cronograma() {
         }
 
         //Primera solicitud para encender el servidor
-        await fetch("https://backend-nodejs-production-79b3.up.railway.app/ping");
+        <Ping/>
 
         //Obtener los datos
         const res = await retryFetch("https://backend-nodejs-production-79b3.up.railway.app/api/cronograma");
