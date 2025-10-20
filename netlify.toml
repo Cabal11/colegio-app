@@ -4,7 +4,7 @@ to = "https://backend-nodejs-production-79b3.up.railway.app/:splat"
 status = 200
 force = true
 headers = {
-    "X-Forwarded-Host" = "liceonosaradev.netlify.app"
+  "X-Forwarded-Host" = "liceonosaradev.netlify.app"
 }
 
 [[redirects]]
