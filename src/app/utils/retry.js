@@ -16,7 +16,7 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
 
       //Validar si recibio el token
       if (!resToken) {
-        throw new Error("Problema con el servidor");
+        throw new Error("Problema con el token", resToken.json());
       }
 
       //Obtener los datos
@@ -33,15 +33,16 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
       //Validar si la respuesta fue un 200
       if (!res.ok) {
         //Error y enviar al catch
-        throw new Error("Problema con el servidor");
+        throw new Error("Problema al solicitar datos", res.json());
       }
 
       //Pasar los datos a json
       const data = await res.json();
       return data;
+      break;
     } catch (err) {
       //Mensaje de error
-      console.error(`Problemas en la solicitud ${err}`);
+      console.error(`Problema consultando el servidor ${err.message}`);
       console.log(`Intentos: ${i}`);
       if (i < intentos - 1) {
         //Espera 3 segundos, para que el servidor se active y volver a repetir
