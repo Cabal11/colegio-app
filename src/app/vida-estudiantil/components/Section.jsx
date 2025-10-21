@@ -38,7 +38,7 @@ export default function Section() {
 
         //Obtener los datos
         const res = await retryFetch(
-          "http://localhost:3000/api/seccion"
+          "http://backend-nodejs-production-79b3.up.railway.app/api/seccion"
         );
 
         
