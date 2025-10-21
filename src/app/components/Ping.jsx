@@ -6,7 +6,7 @@ export default function Ping() {
     async function activarServidor() {
       try {
         const res = await fetch(
-          "/ping"
+          "https://backend-nodejs-production-79b3.up.railway.app/ping"
         );
         if (!res.ok) {
           console.log("Servidor en reposo");
