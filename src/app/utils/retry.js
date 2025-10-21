@@ -22,8 +22,8 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
         }
 
         //Devolver los datos
-        const data = await res.json();
-        return data;
+        // const data = await res.json();
+        // return data;
       } else {
         res = await fetch(url, {
           method: "GET",
