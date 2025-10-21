@@ -55,7 +55,7 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
 }
 
 async function SolicitarToken() {
-  const res = await fetch("http://backend-nodejs-production-79b3.up.railway.app/getToken", {
+  const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/getToken", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -70,7 +70,7 @@ async function SolicitarToken() {
 }
 
 async function ValidarCookie() {
-  const res = await fetch("http://backend-nodejs-production-79b3.up.railway.app/verificar", {
+  const res = await fetch("https://backend-nodejs-production-79b3.up.railway.app/verificar", {
     credentials: "include",
   });
 
