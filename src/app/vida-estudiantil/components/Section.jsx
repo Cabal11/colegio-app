@@ -64,14 +64,14 @@ export default function Section() {
   if (loading) {
     return (
       <div className={styles.container}>
-        <div className={styles.error}>
+        <section className={styles.error}>
           <div className={styles.containerPuntos}>
             <div className={styles.pulser}></div>
             <div className={styles.pulser}></div>
             <div className={styles.pulser}></div>
           </div>
           Cargando información. Por favor espere.
-        </div>
+        </section>
       </div>
     );
   }

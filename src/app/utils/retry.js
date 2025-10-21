@@ -1,50 +1,48 @@
 export async function retryFetch(url, intentos = 3, delay = 3000) {
   for (let i = 0; i < intentos; i++) {
     try {
-      //Obtener token
-      const res = await fetch("http://localhost:3000/getToken", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name: "frontend1K" }),
-        credentials: "include",
-      });
 
+      const noCookie = await GuardarToken();
+      let res;
+
+      //Consultar si tiene cookie
+      if (noCookie) {
+        //Si no tiene la toma del localStorage
+        const token = localStorage.getItem("token");
+        res = await fetch(url, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        //Validar si fue un 200
+        if (!res.ok) {
+          throw new Error("Solicitud de token fallida");
+        }
+
+        //Devolver los datos
+        const data = await res.json();
+        return data;
+      } else {
+        res = await fetch(url, {
+          method: "GET",
+          credentials: "include",
+        });
+
+        //Validar si fue un 200
+        if (!res.ok) {
+          throw new Error("Solicitud de cookie fallida");
+        }
+      }
+      //Devolver los datos
       const data = await res.json();
-
-      return data.token;
-
-      // //Validar si recibio el token
-      // if (!resToken) {
-      //   throw new Error("Problema con el token", resToken.json());
-      // }
-
-      // //Obtener los datos
-      // const res = await fetch(url, {
-      //   credentials: "include",
-      //   method: "GET",
-      // });
-
-      // //Validar si esta autorizado
-      // if (res.status === 401) {
-      //   throw new Error("No autorizado");
-      // }
-
-      // //Validar si la respuesta fue un 200
-      // if (!res.ok) {
-      //   //Error y enviar al catch
-      //   throw new Error("Problema al solicitar datos", res.json());
-      // }
-
-      // //Pasar los datos a json
-      // const data = await res.json();
-      // return data;
-      // break;
+      return data;
+      break;
     } catch (err) {
       //Mensaje de error
       console.error(`Problema consultando el servidor ${err.message}`);
-      console.log(`Intentos: ${i}`);
+      console.log(`Intentos: ${i + 1}`);
       if (i < intentos - 1) {
         //Espera 3 segundos, para que el servidor se active y volver a repetir
         await new Promise((r) => setTimeout(r, delay));
@@ -56,22 +54,22 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
   }
 }
 
-async function SolcitarToken() {
+async function SolicitarToken() {
   const res = await fetch("http://localhost:3000/getToken", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name: "frontend1K" }),
-        credentials: "include",
-      });
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name: "frontend1K" }),
+    credentials: "include",
+  });
 
-      const data = await res.json();
+  const data = await res.json();
 
-      return data.token;
+  return data.token;
 }
 
-async function validarCookie() {
+async function ValidarCookie() {
   const res = await fetch("http://localhost:3000/verificar", {
     credentials: "include",
   });
@@ -83,11 +81,13 @@ async function validarCookie() {
   return true;
 }
 
-async function guardarToken() {
-  const token = await retryFetch(url);
-  const validCookie = await validarCookie();
+async function GuardarToken() {
+  const token = await SolicitarToken();
+  const validCookie = await ValidarCookie();
 
   if (!validCookie) {
     localStorage.setItem("token", token);
+    return true;
   }
+  return false;
 }
