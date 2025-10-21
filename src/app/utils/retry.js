@@ -12,7 +12,7 @@ export async function retryFetch(url, intentos = 3, delay = 3000) {
         res = await fetch(url, {
           method: "GET",
           headers: {
-            Authorization: `Bearer ${token}`,
+            'Authorization': `Bearer ${token}`,
           },
         });
 
