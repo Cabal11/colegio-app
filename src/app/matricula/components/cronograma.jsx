@@ -16,12 +16,15 @@ export default function cronograma() {
     //Hacer consulta
     const fetchData = async () => {
       try {
+        //Obtener datos de cache
         const dataCache = localStorage.getItem(key);
 
+        //Validar si contiene datos
         if (dataCache) {
           const { data, timestamp } = JSON.parse(dataCache);
           const ahora = Date.now();
 
+          //Validar si su tiempo expiro o no
           if (ahora - timestamp < resetTime) {
             setCronograma(data);
             setLoading(false);
@@ -100,6 +103,7 @@ export default function cronograma() {
   );
 }
 
+//Modificar la fecha para que muestre en dias y su fecha
 function formatoFecha(fechas) {
   let fecha = new Date(fechas);
   const opciones = {

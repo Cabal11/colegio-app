@@ -1,5 +1,6 @@
 import styles from "../styles/Modulos/inicio.module.css";
 
+//Arrays de meses
 const meses = [
   {
     mes: "Enero",
@@ -98,14 +99,18 @@ const meses = [
 
 export default function fechas() {
 
+  //Obtener fecha actual
   var mesActual = new Date().toLocaleDateString("es-ES", { month: "long" });
 
+  //Buscar el mes del array y si coincide con el actual
   var mesEncontrado = meses.find(
     (m) => m.mes.toLowerCase() === mesActual.toLowerCase()
   );
 
+  //Validar si encontro el mes
   const mes = mesEncontrado?.mes ?? "Mes no encotrado";
 
+  //Validar si el mes encontrado tiene dias especiales
   const diasEspeciales = mesEncontrado?.dias ?? [];
 
 
@@ -113,6 +118,7 @@ export default function fechas() {
     <section className={styles.containerDiasEspeciales}>
       <p className={styles.textoMes}>Mes: {mes}</p>
       <ul>
+        {/* Recorrer el array de dias especiales segun el mes encontrado */}
         {diasEspeciales.map((dias, index) => (
           <li key={index}>{dias}</li>
         ))}

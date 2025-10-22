@@ -16,12 +16,15 @@ export default function Section() {
     //Hacer consulta
     const fetchData = async () => {
       try {
+        //Obtener los datos desde cache
         const dataCache = localStorage.getItem(key);
 
+        //Validar si contiene datos
         if (dataCache) {
           const { data, timestamp } = JSON.parse(dataCache);
           const ahora = Date.now();
 
+          //Validar si expiro el tiempo para actualizar de nuevo
           if (ahora - timestamp < resetTime) {
             setSecciones(data);
             setLoading(false);

@@ -16,6 +16,7 @@ function Navbar() {
         <img className="img-nav" alt="Icono colegio" src="/Nuevo_logo.webp" />
       </Link>
 
+{/* Boton responsive */}
       <button
         title="menu-responsive"
         className="menu-cambiar"
@@ -24,9 +25,10 @@ function Navbar() {
         {menuAbierto ? (
           <FaTimes style={{ color: "black" }} />
         ) : (
-          <FaBars style={{ color: "black" }} />
+          <FaBars style={{ color: "white" }} />
         )}
       </button>
+      {/* Validar si es un menu para PC, tablets o moviles */}
       <nav className={`nav-bar ${menuAbierto ? "abierto" : ""}`}>
         <ol className="nav-items">
           <li className="nav-Inicio">

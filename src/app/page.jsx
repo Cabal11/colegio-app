@@ -10,7 +10,7 @@ export default function Inicio() {
       <Ping />
       <h1 className={styles.titulo}>Colegio Bocas de Nosara</h1>
       <div>
-        {/* <h2 className={styles.tituloFecha}>Fechas importantes</h2> */}
+        {/* Componente de fechas especiales o patrioticos del mes */}
         <Fechas />
       </div>
 

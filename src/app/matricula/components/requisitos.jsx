@@ -16,12 +16,15 @@ export default function requisitos() {
     //Hacer consulta
     const fetchData = async () => {
       try {
+        // Obtener los datos
         const dataCache = localStorage.getItem(key);
 
+        //Validar si contiene datos
         if (dataCache) {
           const { data, timestamp } = JSON.parse(dataCache);
           const ahora = Date.now();
 
+          //Validar si expiraron el tiempo de los datos
           if (ahora - timestamp < resetTime) {
             setRequisitos(data);
             setLoading(false);
