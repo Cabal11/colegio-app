@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "@/app/styles/Navbar.css";
+import styles from "@/app/styles/navbar.module.css";
 import Link from "next/link";
 
 function Navbar() {
@@ -11,15 +11,19 @@ function Navbar() {
   };
 
   return (
-    <header>
+    <header className={styles.header}>
       <Link href="/">
-        <img className="img-nav" alt="Icono colegio" src="/Nuevo_logo.webp" />
+        <img
+          className={styles["img-nav"]}
+          alt="Icono colegio"
+          src="/Nuevo_logo.webp"
+        />
       </Link>
 
-{/* Boton responsive */}
+      {/* Boton responsive */}
       <button
         title="menu-responsive"
-        className="menu-cambiar"
+        className={styles["menu-cambiar"]}
         onClick={() => setMenuAbierto(!menuAbierto)}
       >
         {menuAbierto ? (
@@ -29,26 +33,28 @@ function Navbar() {
         )}
       </button>
       {/* Validar si es un menu para PC, tablets o moviles */}
-      <nav className={`nav-bar ${menuAbierto ? "abierto" : ""}`}>
-        <ol className="nav-items">
-          <li className="nav-Inicio">
-            <Link href="/">
-              <span onClick={cerrarMenu}>Inicio</span>
+      <nav
+        className={`${styles["nav-bar"]} ${menuAbierto ? styles.abierto : ""}`}
+      >
+        <ol className={styles["nav-items"]}>
+          <li className={styles["nav-Inicio"]}>
+            <Link href="/" onClick={cerrarMenu}>
+              <span>Inicio</span>
             </Link>
           </li>
-          <li className="nav-Matricula">
+          <li className={styles["nav-Matricula"]} onClick={cerrarMenu}>
             <Link href="/matricula">
-              <span onClick={cerrarMenu}>Matrícula</span>
+              <span>Matrícula</span>
             </Link>
           </li>
-          <li className="nav-Vida">
+          <li className={styles["nav-Vida"]} onClick={cerrarMenu}>
             <Link href="/vida-estudiantil">
-              <span onClick={cerrarMenu}>Vida estudiantil</span>
+              <span>Vida estudiantil</span>
             </Link>
           </li>
-          <li className="nav-Contacto">
+          <li className={styles["nav-Contacto"]} onClick={cerrarMenu}>
             <Link href="/contacto">
-              <span onClick={cerrarMenu}>Contacto</span>
+              <span>Contacto</span>
             </Link>
           </li>
         </ol>

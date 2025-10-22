@@ -1,5 +1,5 @@
 /*Barra de navegacion estilo*/
-header {
+.header {
   position: fixed;
   top: 0;
   font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -13,27 +13,27 @@ header {
   z-index: 1000;
 }
 
-header .img-nav {
+.img-nav {
   width: auto;
   height: 60px;
   margin-right: auto;
 }
 
-header a {
+.header a {
   color: #e0e0e0;
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: bold;
 }
 
-header .nav-items li {
+.nav-items li {
   display: inline-block;
   list-style-type: none;
   margin-left: 15px;
   transition: ease-in-out 0.3s;
 }
 
-header .nav-items li a {
+.nav-items li a {
   display: inline-block;
   align-items: center;
   justify-content: center;
@@ -42,7 +42,7 @@ header .nav-items li a {
   height: 100%;
 }
 
-header .nav-items li:hover {
+.nav-items li:hover {
   transform: scale(1.1);
   background-color: #ff6f61;
   border-radius: 5px;
@@ -53,7 +53,7 @@ header .nav-items li:hover {
   /*background: rgb(43, 156, 243);*/
 }
 
-header .nav-items li a:hover {
+.nav-items li a:hover {
   color: white;
 }
 
@@ -79,8 +79,13 @@ header .nav-items li a:hover {
     z-index: 1000;
   }
 
-  .nav-bar.abierto {
+  .nav-bar.abierto{
     display: flex;
+  }
+
+  .rutas{
+    width: 100vw;
+
   }
 
   .nav-items {
