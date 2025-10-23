@@ -49,7 +49,7 @@ const meses = [
     dias: [
       "Tercer domingo Día del Padre",
       "5 Día Mundial del Medio Ambiente",
-      "15 Día del Árbol en Costa Rica",
+      "15 Día del Árbol",
     ],
   },
   {

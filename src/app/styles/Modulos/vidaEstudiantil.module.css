@@ -1,7 +1,5 @@
 .container {
   flex: 1;
-  /* Por si la imagen queda muy abajo se sube con margin */
-  /* margin-bottom: 200px; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -127,7 +125,7 @@
   }
 }
 
-/*Estilo del mensaje de error*/
+/*Estilo del mensaje de error y de carga*/
 .error {
   flex: 1;
   display: flex;

@@ -99,11 +99,10 @@
 .textoHorario {
   font-size: clamp(1rem, 4vw, 1.2rem);
   line-height: 1.5;
-  /* padding-top: 0.3rem; */
   padding-bottom: 1rem;
 }
 
-/*Estilo del mensaje de error*/
+/*Estilo del mensaje de error y carga*/
 .error {
   flex: 1;
   display: flex;

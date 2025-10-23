@@ -1,12 +1,11 @@
 import "./globals.css";
-import { headers } from "next/headers";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 export const metadata = {
   title: "Colegio Bocas de Nosara",
-  description: "Web oficial en prueba para el colegio Bocas de Nosara",
-  url: "https://liceonosaradev.netlify.app",
+  description: "Sitio Web oficial del colegio Bocas de Nosara",
+  url: "https://colegio-nosara.vercel.app",
   siteName: "Colegio Bocas de Nosara",
   icons: {
     icon: "/Nuevo_logo.webp",

@@ -95,9 +95,8 @@
   font-size: clamp(1.3rem, 5vw, 3rem);
   /* Por si un navegador no soporta el degradado */
   color: #f1f1f1;
-  text-shadow:
-  0 1px 4px rgba(255, 255, 255, 0.3),
-  0 2px 6px rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.3),
+    0 2px 6px rgba(255, 255, 255, 0.2);
   background: linear-gradient(to bottom, #0d3b66, #f4d35e);
   /* background: linear-gradient(to bottom, #00eaff, #0099ff); */
   -webkit-background-clip: text;
@@ -159,9 +158,6 @@
 }
 
 @media (max-width: 500px) {
-  .fondo {
-    /* object-fit: contain; */
-  }
   .seccion {
     margin-bottom: 20%;
   }
