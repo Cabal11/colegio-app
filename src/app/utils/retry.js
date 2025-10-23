@@ -63,7 +63,7 @@ async function SolicitarToken() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name: "frontend1K" }),
+      body: JSON.stringify({ name: process.env.NEXT_PUBLIC_NAME }),
       credentials: "include",
     }
   );
