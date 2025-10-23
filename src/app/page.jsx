@@ -20,9 +20,7 @@ export default function Inicio() {
         descripcion={
           "Matrícula en el colegio Bocas de Nosara y disfruta de una experiencia inolvidable, se encuentran las materias básicas, así como talleres exploratorios, educación musical, informática educativa, inglés y mucho más."
         }
-        imagenFondo={
-          "https://raw.githubusercontent.com/Cabal11/Imagenes/main/assets/Colegio_name.webp"
-        }
+        imagenFondo={"/colegio_name.webp"}
       />
 
       <Section
@@ -30,9 +28,7 @@ export default function Inicio() {
         descripcion={
           "Disfruta de múltiples actividades dentro y fuera de la institución. Donde son muchos de los momentos para que queden el recuerdo. Tanto como las salidas en competencias, viajes de la banda, el FEA y otros."
         }
-        imagenFondo={
-          "https://raw.githubusercontent.com/Cabal11/Imagenes/main/assets/Institucion.webp"
-        }
+        imagenFondo={"/institucion.webp"}
       />
 
       <Section
