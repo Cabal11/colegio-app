@@ -2,7 +2,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 // import GoogleAnalytics from "./components/GoogleAnalytics";
-import { GoogleAnalytics } from "@next/third-parties";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = {
   title: "Colegio Bocas de Nosara",
