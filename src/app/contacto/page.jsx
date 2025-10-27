@@ -17,7 +17,7 @@ export default function Contacto() {
         <section className={styles.tarjeta}>
           <div className={styles.texto}>
             <h1>Correo</h1>
-            <p>Envíanos un mensaje al correo <a href="mailto:lic.debocasdenosara@gmail.com">lic.debocasdenosara@gmail.com</a></p>
+            <p>Envíanos un mensaje al correo <a href="mailto:lic.debocasdenosara@gmail.com">lic.debocasdenosara@gmail.com</a> o al <a href="mailto:lic.debocasdenosara@mep.go.cr">lic.debocasdenosara@mep.go.cr</a></p>
             {/*Enlace para enviar correo*/}
           </div>
         </section>
@@ -25,7 +25,7 @@ export default function Contacto() {
         <section className={styles.tarjeta}>
           <div className={styles.texto}>
             <h1>Teléfono</h1>
-            <p>Llámanos para más información al número <a href="tel:+50626820268">+506 2682-0268</a></p>
+            <p>Llámanos para más información al número <a href="tel:+50626820268">+506 2682-0268</a> o al <a href="tel:+50626820522">+506 2682-0522</a></p>
             {/*Envia al usuario a su app telefono para realizar llamada*/}
           </div>
         </section>
