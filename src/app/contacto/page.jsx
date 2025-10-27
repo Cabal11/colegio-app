@@ -17,7 +17,7 @@ export default function Contacto() {
         <section className={styles.tarjeta}>
           <div className={styles.texto}>
             <h1>Correo</h1>
-            <p>Envíanos un mensaje al correo <a href="mailto:lic.debocasdenosara@mep.go.cr">lic.debocasdenosara@mep.go.cr</a></p>
+            <p>Envíanos un mensaje al correo <a href="mailto:lic.debocasdenosara@gmail.com">lic.debocasdenosara@gmail.com</a></p>
             {/*Enlace para enviar correo*/}
           </div>
         </section>
@@ -25,7 +25,7 @@ export default function Contacto() {
         <section className={styles.tarjeta}>
           <div className={styles.texto}>
             <h1>Teléfono</h1>
-            <p>Llámanos para más información al número <a href="tel:+50626820522">+506 2682-0522</a></p>
+            <p>Llámanos para más información al número <a href="tel:+50626820268">+506 2682-0268</a></p>
             {/*Envia al usuario a su app telefono para realizar llamada*/}
           </div>
         </section>
@@ -33,7 +33,7 @@ export default function Contacto() {
         <section className={styles.tarjeta}>
           <div className={styles.texto}>
             <h1>Dirección</h1>
-            <p>Estamos ubicados diagonal al salón de Santa Teresita</p>
+            <p>Guanacaste, Nicoya, Nosara, Contiguo al Salón Comunal Santa Teresita</p>
             {/* Informacion sobre la direccion de la institucion */}
           </div>
         </section>
