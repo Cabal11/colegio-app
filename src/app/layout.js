@@ -1,7 +1,8 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import GoogleAnalytics from "./components/GoogleAnalytics";
+// import GoogleAnalytics from "./components/GoogleAnalytics";
+import {GoogleAnalytics} from '@next/third-parties/google'
 
 export const metadata = {
   title: "Colegio Bocas de Nosara",
@@ -19,9 +20,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head />
       <body>
-        <GoogleAnalytics />
+       <GoogleAnalytics gaId="G-2T0GPVTL7Q"/>
+           {/* <GoogleAnalytics /> */}
         <div className="layout">
           <Navbar />
           {children}
