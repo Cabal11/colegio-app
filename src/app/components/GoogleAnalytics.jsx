@@ -1,27 +1,16 @@
-'use client';
+"use client";
 
-import Script from "next/script";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+import { pageview } from "../lib/gtag";
 
-export default function GoogleAnalytics() {
-  const GA_ID = "G-2T0GPVTL7Q";
+export default function Analytics() {
+  const pathname = usePathname();
+  useEffect(() => {
+    if (pathname) {
+      pageview(pathname);
+    }
+  }, [pathname]);
 
-  return (
-    <>
-      {/* Carga del script principal de GA */}
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
-
-      {/* Configuración de Google Analytics */}
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_ID}');
-        `}
-      </Script>
-    </>
-  );
+  return null;
 }

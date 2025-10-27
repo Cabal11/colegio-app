@@ -1,8 +1,7 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-// import GoogleAnalytics from "./components/GoogleAnalytics";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 export const metadata = {
   title: "Colegio Bocas de Nosara",
@@ -19,10 +18,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="es">
+      <head>
+        {/* Carga del script principal de GA */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-2T0GPVTL7Q"
+          strategy="afterInteractive"
+        />
+
+        {/* Configuración de Google Analytics */}
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-2T0GPVTL7Q', {page_path: window.location.pathname,});
+                `}
+        </Script>
+      </head>
       <body>
-        <GoogleAnalytics gaId="G-2T0GPVTL7Q"/>
-        {/* <GoogleAnalytics /> */}
         <div className="layout">
           <Navbar />
           {children}
