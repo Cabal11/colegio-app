@@ -1,16 +1,8 @@
-"use client";
+export const GTM_ID = 'GTM-KM9PTR67';
 
-import { usePathname } from "next/navigation";
-import { useEffect } from "react";
-import { pageview } from "../lib/gtag";
-
-export default function Analytics() {
-  const pathname = usePathname();
-  useEffect(() => {
-    if (pathname) {
-      pageview(pathname);
-    }
-  }, [pathname]);
-
-  return null;
-}
+export const pageview = (url) => {
+  window.dataLayer.push({
+    event: 'pageview',
+    page: url,
+  });
+};
