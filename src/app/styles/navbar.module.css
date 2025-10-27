@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   font-family: Verdana, Arial, Helvetica, sans-serif;
-  background: blue;
+  background: #23361B;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -44,7 +44,7 @@
 
 .nav-items li:hover {
   transform: scale(1.1);
-  background-color: #ff6f61;
+  background-color: #3E885B;
   border-radius: 5px;
 
   /*Estilo de juego*/
@@ -70,7 +70,7 @@
     position: absolute;
     top: 60px;
     left: 0;
-    background-color: blue;
+    background-color: #23361B;
     opacity: 0.9;
     width: 100%;
     padding: 1rem 5%;

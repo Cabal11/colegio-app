@@ -15,7 +15,7 @@ function Footer() {
         rel="noopener noreferrer"
       >
         {/* Icono de Facebook */}
-        <img className={styles.imagenFace} src="/facebook_icono.svg" alt="Icono facebook"></img>
+        <img className={styles.imagenFace} src="/facebook-logo.svg" alt="Icono facebook"></img>
       </a>
     </footer>
   );
